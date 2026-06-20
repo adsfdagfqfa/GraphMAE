@@ -1,6 +1,7 @@
 from .edcoder import PreModel
 from .edcoder_degree_mask import DegreeMixedMaskPreModel
 from .edcoder_pagerank_mask import PageRankCurriculumMaskPreModel
+from .edcoder_structmae_mask import StructMAEMaskPreModel
 
 
 def build_model(args):
@@ -25,6 +26,10 @@ def build_model(args):
     pagerank_mask_steps = getattr(args, "pagerank_mask_steps", 5)
     pagerank_iters = getattr(args, "pagerank_iters", 20)
     pagerank_damping = getattr(args, "pagerank_damping", 0.85)
+    structmae_beta = getattr(args, "structmae_beta", 0.25)
+    structmae_score = getattr(args, "structmae_score", "pagerank")
+    structmae_iters = getattr(args, "structmae_iters", 20)
+    structmae_damping = getattr(args, "structmae_damping", 0.85)
 
 
     activation = args.activation
@@ -48,6 +53,14 @@ def build_model(args):
             pagerank_mask_steps=pagerank_mask_steps,
             pagerank_iters=pagerank_iters,
             pagerank_damping=pagerank_damping,
+        )
+    elif mask_strategy == "structmae":
+        model_cls = StructMAEMaskPreModel
+        model_kwargs.update(
+            structmae_beta=structmae_beta,
+            structmae_score=structmae_score,
+            structmae_iters=structmae_iters,
+            structmae_damping=structmae_damping,
         )
     elif mask_strategy != "random":
         raise NotImplementedError(f"{mask_strategy} is not implemented.")
