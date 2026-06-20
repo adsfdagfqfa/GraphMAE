@@ -1,0 +1,82 @@
+StructMAE-style fast run started: Sun 21 Jun 2026 12:48:41 AM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Small seeds: 0 1 2 3 4 5
+Medium seeds: 0 1 2
+StructMAE beta: 0.5
+StructMAE score: pagerank
+StructMAE iters: 20
+StructMAE damping: 0.85
+Skipped: NCI1 COLLAB REDDIT-BINARY
+Logs: /root/GraphMAE/logs/structmae_fast_20260621_004841
+
+OK   node_citeseer_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/node_citeseer_structmae.log
+# final_acc: 0.7197±0.0034
+# early-stopping_acc: 0.7227±0.0030
+real 72.19
+user 70.80
+sys 4.02
+
+OK   node_cora_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/node_cora_structmae.log
+# final_acc: 0.8180±0.0045
+# early-stopping_acc: 0.8048±0.0064
+real 291.14
+user 287.73
+sys 4.81
+
+OK   node_pubmed_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/node_pubmed_structmae.log
+# final_acc: 0.8087±0.0025
+# early-stopping_acc: 0.8057±0.0012
+real 166.17
+user 163.82
+sys 4.65
+
+OK   graph_MUTAG_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_MUTAG_structmae.log
+#Test_f1: 0.8670±0.0755
+#Test_f1: 0.8942±0.0666
+#Test_f1: 0.8404±0.0916
+#Test_f1: 0.8567±0.0741
+#Test_f1: 0.8936±0.0527
+#Test_f1: 0.8453±0.0780
+# final_acc: 0.8662±0.0213
+real 20.52
+user 89.60
+sys 3.26
+
+OK   graph_IMDB_BINARY_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_IMDB_BINARY_structmae.log
+#Test_f1: 0.7550±0.0242
+#Test_f1: 0.7490±0.0281
+#Test_f1: 0.7550±0.0250
+#Test_f1: 0.7580±0.0227
+#Test_f1: 0.7470±0.0179
+#Test_f1: 0.7580±0.0264
+# final_acc: 0.7537±0.0042
+real 442.88
+user 1993.99
+sys 7.34
+
+OK   graph_IMDB_MULTI_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_IMDB_MULTI_structmae.log
+#Test_f1: 0.5187±0.0231
+#Test_f1: 0.5133±0.0215
+#Test_f1: 0.5007±0.0187
+#Test_f1: 0.5233±0.0327
+#Test_f1: 0.5087±0.0270
+#Test_f1: 0.5140±0.0236
+# final_acc: 0.5131±0.0072
+real 965.93
+user 3269.21
+sys 9.90
+
+OK   graph_PROTEINS_structmae  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_PROTEINS_structmae.log
+#Test_f1: 0.7529±0.0431
+#Test_f1: 0.7574±0.0396
+#Test_f1: 0.7475±0.0467
+#Test_f1: 0.7502±0.0437
+#Test_f1: 0.7547±0.0418
+#Test_f1: 0.7583±0.0479
+# final_acc: 0.7535±0.0038
+real 721.52
+user 3910.89
+sys 10.12
+
+StructMAE-style fast run finished: Sun 21 Jun 2026 01:33:22 AM CST

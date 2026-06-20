@@ -43,3 +43,40 @@ real 20.32
 user 86.58
 sys 3.58
 
+OK   graph_IMDB_BINARY_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/graph_IMDB_BINARY_pagerank_curriculum.log
+#Test_f1: 0.7550±0.0250
+#Test_f1: 0.7590±0.0301
+#Test_f1: 0.7450±0.0287
+#Test_f1: 0.7620±0.0279
+#Test_f1: 0.7520±0.0223
+#Test_f1: 0.7490±0.0301
+# final_acc: 0.7537±0.0058
+real 409.99
+user 1913.21
+sys 7.43
+
+OK   graph_IMDB_MULTI_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/graph_IMDB_MULTI_pagerank_curriculum.log
+#Test_f1: 0.5200±0.0244
+#Test_f1: 0.5173±0.0291
+#Test_f1: 0.5187±0.0299
+#Test_f1: 0.5133±0.0184
+#Test_f1: 0.5167±0.0300
+#Test_f1: 0.5220±0.0171
+# final_acc: 0.5180±0.0027
+real 847.26
+user 3053.01
+sys 8.65
+
+OK   graph_PROTEINS_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/graph_PROTEINS_pagerank_curriculum.log
+#Test_f1: 0.7484±0.0415
+#Test_f1: 0.7484±0.0527
+#Test_f1: 0.7520±0.0520
+#Test_f1: 0.7448±0.0613
+#Test_f1: 0.7556±0.0481
+#Test_f1: 0.7511±0.0444
+# final_acc: 0.7500±0.0034
+real 776.05
+user 4211.17
+sys 10.72
+
+PageRank curriculum fast run finished: Sun 21 Jun 2026 01:00:05 AM CST

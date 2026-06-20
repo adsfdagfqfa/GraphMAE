@@ -1,0 +1,23 @@
+nohup: ignoring input
+RUN  node_citeseer_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset citeseer --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/node_citeseer_structmae.log
+RUN  node_cora_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset cora --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/node_cora_structmae.log
+RUN  node_pubmed_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset pubmed --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/node_pubmed_structmae.log
+RUN  graph_MUTAG_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset MUTAG --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_MUTAG_structmae.log
+RUN  graph_IMDB_BINARY_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset IMDB-BINARY --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_IMDB_BINARY_structmae.log
+RUN  graph_IMDB_MULTI_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset IMDB-MULTI --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_IMDB_MULTI_structmae.log
+RUN  graph_PROTEINS_structmae
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset PROTEINS --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.5 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/structmae_fast_20260621_004841/graph_PROTEINS_structmae.log
+Summary: /root/GraphMAE/logs/structmae_fast_20260621_004841/summary.log
