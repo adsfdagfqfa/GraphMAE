@@ -1,0 +1,37 @@
+StructMAE-style fast run started: Sun 21 Jun 2026 01:57:07 AM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Small seeds: 0 1 2 3 4 5
+Medium seeds: 0 1 2
+StructMAE beta: 0.25
+StructMAE score: pagerank
+StructMAE iters: 20
+StructMAE damping: 0.85
+Skipped: NCI1 COLLAB REDDIT-BINARY
+Logs: /root/GraphMAE/logs/structmae_fast_20260621_015707
+
+FAIL node_citeseer_structmae  /root/GraphMAE/logs/structmae_fast_20260621_015707/node_citeseer_structmae.log
+real 2.12
+user 1.94
+sys 1.67
+
+FAIL node_cora_structmae  /root/GraphMAE/logs/structmae_fast_20260621_015707/node_cora_structmae.log
+real 2.39
+user 2.19
+sys 1.49
+
+FAIL node_pubmed_structmae  /root/GraphMAE/logs/structmae_fast_20260621_015707/node_pubmed_structmae.log
+real 0.13
+user 0.30
+sys 0.97
+
+FAIL graph_MUTAG_structmae  /root/GraphMAE/logs/structmae_fast_20260621_015707/graph_MUTAG_structmae.log
+real 0.13
+user 0.13
+sys 0.18
+
+FAIL graph_IMDB_BINARY_structmae  /root/GraphMAE/logs/structmae_fast_20260621_015707/graph_IMDB_BINARY_structmae.log
+real 0.15
+user 0.27
+sys 0.76
+

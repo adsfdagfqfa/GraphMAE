@@ -1,0 +1,18 @@
+START node_pubmed_structmae: Sun 21 Jun 2026 01:57:12 AM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset pubmed --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.25 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2
+Traceback (most recent call last):
+  File "main_transductive.py", line 2, in <module>
+    import numpy as np
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/numpy/__init__.py", line 154, in <module>
+    from . import ma
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/numpy/ma/__init__.py", line 42, in <module>
+    from . import core
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/numpy/ma/core.py", line 7154, in <module>
+    def put(a, indices, values, mode='raise'):
+KeyboardInterrupt
+Command terminated by signal 2
+real 0.13
+user 0.30
+sys 0.97
+END node_pubmed_structmae: Sun 21 Jun 2026 01:57:12 AM CST
+STATUS 130

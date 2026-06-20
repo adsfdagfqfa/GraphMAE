@@ -1,0 +1,26 @@
+START node_cora_structmae: Sun 21 Jun 2026 01:57:10 AM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset cora --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.25 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+Traceback (most recent call last):
+  File "main_transductive.py", line 6, in <module>
+    from graphmae.utils import (
+  File "/root/GraphMAE/graphmae/utils.py", line 9, in <module>
+    import dgl
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/__init__.py", line 16, in <module>
+    from .backend import load_backend, backend_name
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/backend/__init__.py", line 109, in <module>
+    load_backend(get_preferred_backend())
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/backend/__init__.py", line 43, in load_backend
+    from .._ffi.base import load_tensor_adapter # imports DGL C library
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/_ffi/base.py", line 45, in <module>
+    _LIB, _LIB_NAME, _DIR_NAME = _load_lib()
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/_ffi/base.py", line 35, in _load_lib
+    lib = ctypes.CDLL(lib_path[0])
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/ctypes/__init__.py", line 381, in __init__
+    self._handle = _dlopen(self._name, mode)
+KeyboardInterrupt
+Command terminated by signal 2
+real 2.39
+user 2.19
+sys 1.49
+END node_cora_structmae: Sun 21 Jun 2026 01:57:12 AM CST
+STATUS 130

@@ -1,0 +1,22 @@
+START graph_IMDB_BINARY_structmae: Sun 21 Jun 2026 01:57:12 AM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset IMDB-BINARY --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.25 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+Traceback (most recent call last):
+  File "main_graph.py", line 3, in <module>
+    import numpy as np
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/numpy/__init__.py", line 151, in <module>
+    from . import polynomial
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/numpy/polynomial/__init__.py", line 120, in <module>
+    from .hermite_e import HermiteE
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 844, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 976, in get_code
+  File "<frozen importlib._bootstrap_external>", line 640, in _compile_bytecode
+KeyboardInterrupt
+Command terminated by signal 2
+real 0.15
+user 0.27
+sys 0.76
+END graph_IMDB_BINARY_structmae: Sun 21 Jun 2026 01:57:12 AM CST
+STATUS 130

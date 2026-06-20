@@ -1,0 +1,30 @@
+START node_citeseer_structmae: Sun 21 Jun 2026 01:57:07 AM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset citeseer --device 0 --use_cfg --mask_strategy structmae --structmae_beta 0.25 --structmae_score pagerank --structmae_iters 20 --structmae_damping 0.85 --seeds 0 1 2 3 4 5
+Traceback (most recent call last):
+  File "main_transductive.py", line 4, in <module>
+    import torch
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/__init__.py", line 1465, in <module>
+    from . import _meta_registrations
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_meta_registrations.py", line 7, in <module>
+    from torch._decomp import _add_op_to_registry, global_decomposition_table, meta_table
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 170, in <module>
+    import torch._refs
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_refs/__init__.py", line 1790, in <module>
+    def where(
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 131, in decomposition_decorator
+    tree_map(register, aten_op)
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/utils/_pytree.py", line 196, in tree_map
+    return tree_unflatten([fn(i) for i in flat_args], spec)
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/utils/_pytree.py", line 196, in <listcomp>
+    return tree_unflatten([fn(i) for i in flat_args], spec)
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 128, in register
+    _add_op_to_registry(registry, op, fn)
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_decomp/__init__.py", line 53, in _add_op_to_registry
+    if torch._C._dispatch_has_kernel(op_overload.name()):
+KeyboardInterrupt
+Command terminated by signal 2
+real 2.12
+user 1.94
+sys 1.67
+END node_citeseer_structmae: Sun 21 Jun 2026 01:57:10 AM CST
+STATUS 130
