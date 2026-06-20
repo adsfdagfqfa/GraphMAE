@@ -1,0 +1,107 @@
+Degree mixed small/medium run started: Sat 20 Jun 2026 02:38:20 PM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Small seeds: 0 1 2 3 4 5
+Medium seeds: 0 1 2
+Degree mask ratio: 0.3
+Degree mask power: 1.0
+Run PPI: 0
+Logs: /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820
+
+OK   node_citeseer_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/node_citeseer_degree_mixed.log
+# final_acc: 0.7260±0.0034
+# early-stopping_acc: 0.7262±0.0040
+real 72.18
+user 69.00
+sys 4.95
+
+OK   node_cora_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/node_cora_degree_mixed.log
+# final_acc: 0.8318±0.0035
+# early-stopping_acc: 0.8268±0.0101
+real 281.16
+user 277.17
+sys 5.35
+
+OK   node_pubmed_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/node_pubmed_degree_mixed.log
+# final_acc: 0.8047±0.0017
+# early-stopping_acc: 0.8020±0.0022
+real 142.41
+user 141.00
+sys 4.32
+
+OK   graph_MUTAG_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_MUTAG_degree_mixed.log
+#Test_f1: 0.8611±0.0876
+#Test_f1: 0.8404±0.0533
+#Test_f1: 0.8830±0.0612
+#Test_f1: 0.8830±0.0565
+#Test_f1: 0.8988±0.0439
+#Test_f1: 0.8725±0.0533
+# final_acc: 0.8731±0.0186
+real 20.81
+user 84.37
+sys 3.28
+
+OK   graph_IMDB_BINARY_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_IMDB_BINARY_degree_mixed.log
+#Test_f1: 0.7550±0.0413
+#Test_f1: 0.7550±0.0254
+#Test_f1: 0.7560±0.0258
+#Test_f1: 0.7700±0.0307
+#Test_f1: 0.7510±0.0351
+#Test_f1: 0.7530±0.0276
+# final_acc: 0.7567±0.0062
+real 409.04
+user 1883.56
+sys 7.94
+
+OK   graph_IMDB_MULTI_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_IMDB_MULTI_degree_mixed.log
+#Test_f1: 0.5133±0.0286
+#Test_f1: 0.5240±0.0248
+#Test_f1: 0.5173±0.0320
+#Test_f1: 0.5200±0.0321
+#Test_f1: 0.5147±0.0311
+#Test_f1: 0.5120±0.0287
+# final_acc: 0.5169±0.0041
+real 840.40
+user 2940.46
+sys 8.31
+
+OK   graph_PROTEINS_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_PROTEINS_degree_mixed.log
+#Test_f1: 0.7556±0.0540
+#Test_f1: 0.7493±0.0441
+#Test_f1: 0.7547±0.0440
+#Test_f1: 0.7547±0.0370
+#Test_f1: 0.7448±0.0381
+#Test_f1: 0.7547±0.0506
+# final_acc: 0.7523±0.0039
+real 655.68
+user 3802.02
+sys 9.01
+
+OK   graph_NCI1_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_NCI1_degree_mixed.log
+#Test_f1: 0.7097±0.0164
+#Test_f1: 0.7010±0.0294
+#Test_f1: 0.7197±0.0252
+# final_acc: 0.7101±0.0077
+real 5738.57
+user 37241.60
+sys 82.40
+
+OK   graph_COLLAB_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_COLLAB_degree_mixed.log
+#Test_f1: 0.7884±0.0142
+#Test_f1: 0.7980±0.0122
+#Test_f1: 0.7938±0.0169
+# final_acc: 0.7934±0.0039
+real 1252.93
+user 2967.98
+sys 75.21
+
+OK   graph_REDDIT_BINARY_degree_mixed  /root/GraphMAE/logs/degree_mixed_small_medium_20260620_143820/graph_REDDIT_BINARY_degree_mixed.log
+#Test_f1: 0.8585±0.0210
+#Test_f1: 0.8500±0.0237
+#Test_f1: 0.8455±0.0199
+# final_acc: 0.8513±0.0054
+real 1839.25
+user 11159.07
+sys 197.49
+
+Degree mixed small/medium run finished: Sat 20 Jun 2026 05:45:52 PM CST

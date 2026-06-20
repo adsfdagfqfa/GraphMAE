@@ -1,0 +1,105 @@
+Small/medium 3090 run started: Sat 20 Jun 2026 06:38:24 PM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Small seeds: 0 1 2 3 4 5
+Medium seeds: 0 1 2
+Run PPI: 0
+Logs: /root/GraphMAE/logs/medium_3090_20260620_183824
+
+OK   node_citeseer  /root/GraphMAE/logs/medium_3090_20260620_183824/node_citeseer.log
+# final_acc: 0.7327±0.0021
+# early-stopping_acc: 0.7298±0.0075
+real 67.02
+user 65.66
+sys 4.35
+
+OK   node_cora  /root/GraphMAE/logs/medium_3090_20260620_183824/node_cora.log
+# final_acc: 0.8423±0.0036
+# early-stopping_acc: 0.8338±0.0098
+real 277.37
+user 274.99
+sys 5.11
+
+OK   node_pubmed  /root/GraphMAE/logs/medium_3090_20260620_183824/node_pubmed.log
+# final_acc: 0.8110±0.0065
+# early-stopping_acc: 0.8037±0.0082
+real 142.38
+user 140.92
+sys 4.59
+
+OK   graph_MUTAG  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_MUTAG.log
+#Test_f1: 0.8611±0.0876
+#Test_f1: 0.8725±0.0533
+#Test_f1: 0.8830±0.0612
+#Test_f1: 0.8988±0.0439
+#Test_f1: 0.8936±0.0527
+#Test_f1: 0.8509±0.0706
+# final_acc: 0.8767±0.0170
+real 19.74
+user 82.69
+sys 3.52
+
+OK   graph_IMDB_BINARY  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_IMDB_BINARY.log
+#Test_f1: 0.7520±0.0322
+#Test_f1: 0.7500±0.0279
+#Test_f1: 0.7450±0.0258
+#Test_f1: 0.7620±0.0236
+#Test_f1: 0.7550±0.0323
+#Test_f1: 0.7480±0.0357
+# final_acc: 0.7520±0.0054
+real 394.76
+user 1828.04
+sys 7.07
+
+OK   graph_IMDB_MULTI  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_IMDB_MULTI.log
+#Test_f1: 0.5113±0.0284
+#Test_f1: 0.5213±0.0253
+#Test_f1: 0.5147±0.0186
+#Test_f1: 0.5133±0.0235
+#Test_f1: 0.5153±0.0231
+#Test_f1: 0.5160±0.0250
+# final_acc: 0.5153±0.0031
+real 823.91
+user 2910.01
+sys 7.16
+
+OK   graph_PROTEINS  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_PROTEINS.log
+#Test_f1: 0.7529±0.0455
+#Test_f1: 0.7520±0.0426
+#Test_f1: 0.7592±0.0474
+#Test_f1: 0.7448±0.0517
+#Test_f1: 0.7439±0.0435
+#Test_f1: 0.7547±0.0449
+# final_acc: 0.7513±0.0054
+real 635.31
+user 3726.10
+sys 9.87
+
+OK   graph_NCI1  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_NCI1.log
+#Test_f1: 0.7005±0.0201
+#Test_f1: 0.7039±0.0317
+#Test_f1: 0.7073±0.0236
+# final_acc: 0.7039±0.0028
+real 5538.51
+user 35867.64
+sys 74.66
+
+OK   graph_COLLAB  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_COLLAB.log
+#Test_f1: 0.8062±0.0134
+#Test_f1: 0.8012±0.0130
+#Test_f1: 0.8046±0.0125
+# final_acc: 0.8040±0.0021
+real 1290.72
+user 3028.06
+sys 80.86
+
+OK   graph_REDDIT_BINARY  /root/GraphMAE/logs/medium_3090_20260620_183824/graph_REDDIT_BINARY.log
+#Test_f1: 0.8760±0.0220
+#Test_f1: 0.8795±0.0208
+#Test_f1: 0.8795±0.0175
+# final_acc: 0.8783±0.0016
+real 1750.26
+user 11049.81
+sys 169.92
+
+Small/medium 3090 run finished: Sat 20 Jun 2026 09:40:44 PM CST
