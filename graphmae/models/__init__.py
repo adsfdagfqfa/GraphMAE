@@ -1,6 +1,7 @@
 from .edcoder import PreModel
 from .edcoder_degree_mask import DegreeMixedMaskPreModel
 from .edcoder_pagerank_mask import PageRankCurriculumMaskPreModel
+from .edcoder_pagerank_preserve_mask import PageRankPreserveCurriculumMaskPreModel
 from .edcoder_structmae_mask import StructMAEMaskPreModel
 
 
@@ -48,6 +49,14 @@ def build_model(args):
         )
     elif mask_strategy == "pagerank_curriculum":
         model_cls = PageRankCurriculumMaskPreModel
+        model_kwargs.update(
+            pagerank_mask_ratio=pagerank_mask_ratio,
+            pagerank_mask_steps=pagerank_mask_steps,
+            pagerank_iters=pagerank_iters,
+            pagerank_damping=pagerank_damping,
+        )
+    elif mask_strategy == "pagerank_preserve_curriculum":
+        model_cls = PageRankPreserveCurriculumMaskPreModel
         model_kwargs.update(
             pagerank_mask_ratio=pagerank_mask_ratio,
             pagerank_mask_steps=pagerank_mask_steps,
