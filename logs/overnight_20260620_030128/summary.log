@@ -1,0 +1,62 @@
+Overnight run started: Sat Jun 20 03:01:28 CST 2026
+Device: 0
+Logs: /home/xsj/GraphMAE/logs/overnight_20260620_030128
+OK   graph_MUTAG  /home/xsj/GraphMAE/logs/overnight_20260620_030128/graph_MUTAG.log
+#Test_f1: 0.8611±0.0876
+#Test_f1: 0.8778±0.0470
+#Test_f1: 0.8830±0.0612
+#Test_f1: 0.8988±0.0439
+#Test_f1: 0.8936±0.0527
+# final_acc: 0.8829±0.0132
+real 16.69
+user 51.72
+sys 6.11
+
+OK   graph_IMDB_BINARY  /home/xsj/GraphMAE/logs/overnight_20260620_030128/graph_IMDB_BINARY.log
+#Test_f1: 0.7490±0.0212
+#Test_f1: 0.7530±0.0290
+#Test_f1: 0.7490±0.0207
+#Test_f1: 0.7500±0.0190
+#Test_f1: 0.7550±0.0301
+# final_acc: 0.7512±0.0024
+real 271.36
+user 1488.74
+sys 27.66
+
+OK   graph_IMDB_MULTI  /home/xsj/GraphMAE/logs/overnight_20260620_030128/graph_IMDB_MULTI.log
+#Test_f1: 0.5073±0.0156
+#Test_f1: 0.5173±0.0309
+#Test_f1: 0.5160±0.0211
+#Test_f1: 0.5273±0.0271
+#Test_f1: 0.5140±0.0280
+# final_acc: 0.5164±0.0065
+real 410.66
+user 1941.54
+sys 31.19
+
+OK   graph_PROTEINS  /home/xsj/GraphMAE/logs/overnight_20260620_030128/graph_PROTEINS.log
+#Test_f1: 0.7502±0.0425
+#Test_f1: 0.7574±0.0479
+#Test_f1: 0.7547±0.0492
+#Test_f1: 0.7448±0.0421
+#Test_f1: 0.7546±0.0525
+# final_acc: 0.7523±0.0044
+real 368.64
+user 2814.50
+sys 42.82
+
+OK   node_citeseer  /home/xsj/GraphMAE/logs/overnight_20260620_030128/node_citeseer.log
+# final_acc: 0.7306±0.0044
+# early-stopping_acc: 0.7293±0.0047
+real 243.72
+user 229.38
+sys 17.34
+
+OK   node_cora  /home/xsj/GraphMAE/logs/overnight_20260620_030128/node_cora.log
+# final_acc: 0.8401±0.0043
+# early-stopping_acc: 0.8370±0.0083
+real 592.94
+user 531.82
+sys 64.37
+
+Overnight run finished: Sat Jun 20 03:33:12 CST 2026

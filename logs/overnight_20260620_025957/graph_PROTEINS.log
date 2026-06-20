@@ -1,0 +1,15 @@
+++ date
++ echo 'START graph_PROTEINS: Sat Jun 20 03:01:03 CST 2026'
+START graph_PROTEINS: Sat Jun 20 03:01:03 CST 2026
++ echo 'COMMAND: /home/xsj/miniconda3/envs/graphmae/bin/python main_graph.py --dataset PROTEINS --device 0 --use_cfg --seeds 0 1 2 3 4'
+COMMAND: /home/xsj/miniconda3/envs/graphmae/bin/python main_graph.py --dataset PROTEINS --device 0 --use_cfg --seeds 0 1 2 3 4
++ /usr/bin/time -p /home/xsj/miniconda3/envs/graphmae/bin/python main_graph.py --dataset PROTEINS --device 0 --use_cfg --seeds 0 1 2 3 4
+2026-06-20 03:01:05,206 - INFO - Using best configs
+------ Use best configs ------
+Namespace(activation='prelu', alpha_l=1, attn_drop=0.1, batch_size=32, concat_hidden=False, dataset='PROTEINS', decoder='gin', deg4feat=False, device=0, drop_edge_rate=0.0, encoder='gin', in_drop=0.2, linear_prob=True, load_model=False, logging=False, loss_fn='sce', lr=0.00015, lr_f=0.001, mask_rate=0.5, max_epoch=100, max_epoch_f=30, negative_slope=0.2, norm='batchnorm', num_heads=4, num_hidden=512, num_layers=3, num_out_heads=1, optimizer='adam', pooling='max', replace_rate=0.0, residual=False, save_model=False, scheduler=False, seeds=[0, 1, 2, 3, 4], use_cfg=True, warmup_steps=-1, weight_decay=0.0, weight_decay_f=0.0)
+Downloading /home/xsj/.dgl/PROTEINS.zip from https://www.chrsmrrs.com/graphkerneldatasets/PROTEINS.zip...
+Extracting file to /home/xsj/.dgl/PROTEINS
+Use node label as node features
+******** # Num Graphs: 1113, # Num Feat: 3, # Num Classes: 2 ********
+####### Run 0 for seed 0
+  0%|          | 0/100 [00:00<?, ?it/s]Epoch 0 | train_loss: 0.3789:   0%|          | 0/100 [00:02<?, ?it/s]Epoch 0 | train_loss: 0.3789:   1%|          | 1/100 [00:02<03:31,  2.14s/it]Epoch 1 | train_loss: 0.2888:   1%|          | 1/100 [00:02<03:31,  2.14s/it]Epoch 1 | train_loss: 0.2888:   2%|▏         | 2/100 [00:02<02:09,  1.32s/it]Epoch 2 | train_loss: 0.2715:   2%|▏         | 2/100 [00:03<02:09,  1.32s/it]Epoch 2 | train_loss: 0.2715:   3%|▎         | 3/100 [00:03<01:46,  1.09s/it]Epoch 3 | train_loss: 0.2679:   3%|▎         | 3/100 [00:04<01:46,  1.09s/it]Epoch 3 | train_loss: 0.2679:   4%|▍         | 4/100 [00:04<01:31,  1.05it/s]Epoch 4 | train_loss: 0.2673:   4%|▍         | 4/100 [00:05<01:31,  1.05it/s]Epoch 4 | train_loss: 0.2673:   5%|▌         | 5/100 [00:05<01:27,  1.08it/s]Epoch 5 | train_loss: 0.2669:   5%|▌         | 5/100 [00:06<01:27,  1.08it/s]Epoch 5 | train_loss: 0.2669:   6%|▌         | 6/100 [00:06<01:24,  1.11it/s]

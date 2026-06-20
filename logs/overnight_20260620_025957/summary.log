@@ -1,0 +1,24 @@
+Overnight run started: Sat Jun 20 02:59:57 CST 2026
+Device: 0
+Logs: /home/xsj/GraphMAE/logs/overnight_20260620_025957
+OK   graph_MUTAG  /home/xsj/GraphMAE/logs/overnight_20260620_025957/graph_MUTAG.log
+#Test_f1: 0.8611±0.0876
+#Test_f1: 0.8778±0.0470
+#Test_f1: 0.8830±0.0612
+#Test_f1: 0.8988±0.0439
+#Test_f1: 0.8936±0.0527
+# final_acc: 0.8829±0.0132
+real 18.61
+user 48.07
+sys 7.29
+
+FAIL graph_IMDB_BINARY  /home/xsj/GraphMAE/logs/overnight_20260620_025957/graph_IMDB_BINARY.log
+real 36.70
+user 191.25
+sys 8.01
+
+FAIL graph_IMDB_MULTI  /home/xsj/GraphMAE/logs/overnight_20260620_025957/graph_IMDB_MULTI.log
+real 11.06
+user 18.95
+sys 5.82
+
