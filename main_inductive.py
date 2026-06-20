@@ -158,6 +158,8 @@ def pretrain(model, dataloaders, optimizer, max_epoch, device, scheduler, num_cl
 
         for subgraph in train_loader:
             subgraph = subgraph.to(device)
+            if hasattr(model, "set_mask_epoch"):
+                model.set_mask_epoch(epoch, max_epoch)
             loss, loss_dict = model(subgraph, subgraph.ndata["feat"])
 
             optimizer.zero_grad()

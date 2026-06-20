@@ -29,6 +29,8 @@ def pretrain(model, graph, feat, optimizer, max_epoch, device, scheduler, num_cl
     for epoch in epoch_iter:
         model.train()
 
+        if hasattr(model, "set_mask_epoch"):
+            model.set_mask_epoch(epoch, max_epoch)
         loss, loss_dict = model(graph, x)
 
         optimizer.zero_grad()

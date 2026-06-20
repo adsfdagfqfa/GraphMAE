@@ -81,6 +81,8 @@ def pretrain(model, pooler, dataloaders, optimizer, max_epoch, device, scheduler
 
             feat = batch_g.ndata["attr"]
             model.train()
+            if hasattr(model, "set_mask_epoch"):
+                model.set_mask_epoch(epoch, max_epoch)
             loss, loss_dict = model(batch_g, feat)
             
             optimizer.zero_grad()

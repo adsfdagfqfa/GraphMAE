@@ -1,5 +1,6 @@
 from .edcoder import PreModel
 from .edcoder_degree_mask import DegreeMixedMaskPreModel
+from .edcoder_pagerank_mask import PageRankCurriculumMaskPreModel
 
 
 def build_model(args):
@@ -20,6 +21,10 @@ def build_model(args):
     mask_strategy = getattr(args, "mask_strategy", "random")
     degree_mask_ratio = getattr(args, "degree_mask_ratio", 0.3)
     degree_mask_power = getattr(args, "degree_mask_power", 1.0)
+    pagerank_mask_ratio = getattr(args, "pagerank_mask_ratio", 0.25)
+    pagerank_mask_steps = getattr(args, "pagerank_mask_steps", 5)
+    pagerank_iters = getattr(args, "pagerank_iters", 20)
+    pagerank_damping = getattr(args, "pagerank_damping", 0.85)
 
 
     activation = args.activation
@@ -35,6 +40,14 @@ def build_model(args):
         model_kwargs.update(
             degree_mask_ratio=degree_mask_ratio,
             degree_mask_power=degree_mask_power,
+        )
+    elif mask_strategy == "pagerank_curriculum":
+        model_cls = PageRankCurriculumMaskPreModel
+        model_kwargs.update(
+            pagerank_mask_ratio=pagerank_mask_ratio,
+            pagerank_mask_steps=pagerank_mask_steps,
+            pagerank_iters=pagerank_iters,
+            pagerank_damping=pagerank_damping,
         )
     elif mask_strategy != "random":
         raise NotImplementedError(f"{mask_strategy} is not implemented.")
