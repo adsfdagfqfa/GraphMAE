@@ -11,9 +11,11 @@ LOG_DIR="${LOG_DIR:-${ROOT_DIR}/logs/degree_mixed_small_medium_$(date +%Y%m%d_%H
 SUMMARY_FILE="${LOG_DIR}/summary.log"
 TIME_BIN="$(command -v time || true)"
 
-# Deadline-friendly default: one seed. Override with, for example:
-#   SEEDS="0 1 2" bash scripts/run_degree_mixed_mask.sh 0
-read -r -a SEED_ARGS <<< "${SEEDS:-0}"
+# Default: small datasets use 6 seeds, medium datasets use 3 seeds.
+# Override with, for example:
+#   SMALL_SEEDS="0 1 2" MEDIUM_SEEDS="0" bash scripts/run_degree_mixed_mask.sh 0
+read -r -a SMALL_SEED_ARGS <<< "${SMALL_SEEDS:-0 1 2 3 4 5}"
+read -r -a MEDIUM_SEED_ARGS <<< "${MEDIUM_SEEDS:-0 1 2}"
 
 mkdir -p "${LOG_DIR}"
 cd "${ROOT_DIR}" || exit 1
@@ -59,7 +61,8 @@ common_args() {
 echo "Degree mixed small/medium run started: $(date)" > "${SUMMARY_FILE}"
 echo "Device: ${DEVICE}" >> "${SUMMARY_FILE}"
 echo "Python: ${PYTHON_BIN}" >> "${SUMMARY_FILE}"
-echo "Seeds: ${SEED_ARGS[*]}" >> "${SUMMARY_FILE}"
+echo "Small seeds: ${SMALL_SEED_ARGS[*]}" >> "${SUMMARY_FILE}"
+echo "Medium seeds: ${MEDIUM_SEED_ARGS[*]}" >> "${SUMMARY_FILE}"
 echo "Degree mask ratio: ${DEGREE_MASK_RATIO}" >> "${SUMMARY_FILE}"
 echo "Degree mask power: ${DEGREE_MASK_POWER}" >> "${SUMMARY_FILE}"
 echo "Run PPI: ${RUN_PPI}" >> "${SUMMARY_FILE}"
@@ -72,38 +75,38 @@ while IFS= read -r arg; do
 done < <(common_args)
 
 run_task node_citeseer_degree_mixed \
-  "${PYTHON_BIN}" main_transductive.py --dataset citeseer "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_transductive.py --dataset citeseer "${COMMON_ARGS[@]}" --seeds "${SMALL_SEED_ARGS[@]}"
 
 run_task node_cora_degree_mixed \
-  "${PYTHON_BIN}" main_transductive.py --dataset cora "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_transductive.py --dataset cora "${COMMON_ARGS[@]}" --seeds "${SMALL_SEED_ARGS[@]}"
 
 run_task node_pubmed_degree_mixed \
-  "${PYTHON_BIN}" main_transductive.py --dataset pubmed "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_transductive.py --dataset pubmed "${COMMON_ARGS[@]}" --seeds "${MEDIUM_SEED_ARGS[@]}"
 
 run_task graph_MUTAG_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset MUTAG "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset MUTAG "${COMMON_ARGS[@]}" --seeds "${SMALL_SEED_ARGS[@]}"
 
 run_task graph_IMDB_BINARY_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset IMDB-BINARY "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset IMDB-BINARY "${COMMON_ARGS[@]}" --seeds "${SMALL_SEED_ARGS[@]}"
 
 run_task graph_IMDB_MULTI_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset IMDB-MULTI "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset IMDB-MULTI "${COMMON_ARGS[@]}" --seeds "${SMALL_SEED_ARGS[@]}"
 
 run_task graph_PROTEINS_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset PROTEINS "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset PROTEINS "${COMMON_ARGS[@]}" --seeds "${SMALL_SEED_ARGS[@]}"
 
 run_task graph_NCI1_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset NCI1 "${COMMON_ARGS[@]}" --pooling sum --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset NCI1 "${COMMON_ARGS[@]}" --pooling sum --seeds "${MEDIUM_SEED_ARGS[@]}"
 
 run_task graph_COLLAB_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset COLLAB "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset COLLAB "${COMMON_ARGS[@]}" --seeds "${MEDIUM_SEED_ARGS[@]}"
 
 run_task graph_REDDIT_BINARY_degree_mixed \
-  "${PYTHON_BIN}" main_graph.py --dataset REDDIT-BINARY "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset REDDIT-BINARY "${COMMON_ARGS[@]}" --seeds "${MEDIUM_SEED_ARGS[@]}"
 
 if [ "${RUN_PPI}" = "1" ]; then
   run_task node_ppi_degree_mixed \
-    "${PYTHON_BIN}" main_inductive.py --dataset ppi "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+    "${PYTHON_BIN}" main_inductive.py --dataset ppi "${COMMON_ARGS[@]}" --seeds "${MEDIUM_SEED_ARGS[@]}"
 fi
 
 echo "Degree mixed small/medium run finished: $(date)" >> "${SUMMARY_FILE}"
