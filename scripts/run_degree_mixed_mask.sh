@@ -7,7 +7,7 @@ DEVICE="${1:-0}"
 DEGREE_MASK_RATIO="${DEGREE_MASK_RATIO:-0.3}"
 DEGREE_MASK_POWER="${DEGREE_MASK_POWER:-1.0}"
 RUN_PPI="${RUN_PPI:-0}"
-LOG_DIR="${LOG_DIR:-${ROOT_DIR}/logs/degree_mixed_medium_$(date +%Y%m%d_%H%M%S)}"
+LOG_DIR="${LOG_DIR:-${ROOT_DIR}/logs/degree_mixed_small_medium_$(date +%Y%m%d_%H%M%S)}"
 SUMMARY_FILE="${LOG_DIR}/summary.log"
 TIME_BIN="$(command -v time || true)"
 
@@ -56,7 +56,7 @@ common_args() {
     --degree_mask_power "${DEGREE_MASK_POWER}"
 }
 
-echo "Degree mixed medium run started: $(date)" > "${SUMMARY_FILE}"
+echo "Degree mixed small/medium run started: $(date)" > "${SUMMARY_FILE}"
 echo "Device: ${DEVICE}" >> "${SUMMARY_FILE}"
 echo "Python: ${PYTHON_BIN}" >> "${SUMMARY_FILE}"
 echo "Seeds: ${SEED_ARGS[*]}" >> "${SUMMARY_FILE}"
@@ -71,8 +71,26 @@ while IFS= read -r arg; do
   COMMON_ARGS+=("${arg}")
 done < <(common_args)
 
+run_task node_citeseer_degree_mixed \
+  "${PYTHON_BIN}" main_transductive.py --dataset citeseer "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+
+run_task node_cora_degree_mixed \
+  "${PYTHON_BIN}" main_transductive.py --dataset cora "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+
 run_task node_pubmed_degree_mixed \
   "${PYTHON_BIN}" main_transductive.py --dataset pubmed "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+
+run_task graph_MUTAG_degree_mixed \
+  "${PYTHON_BIN}" main_graph.py --dataset MUTAG "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+
+run_task graph_IMDB_BINARY_degree_mixed \
+  "${PYTHON_BIN}" main_graph.py --dataset IMDB-BINARY "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+
+run_task graph_IMDB_MULTI_degree_mixed \
+  "${PYTHON_BIN}" main_graph.py --dataset IMDB-MULTI "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
+
+run_task graph_PROTEINS_degree_mixed \
+  "${PYTHON_BIN}" main_graph.py --dataset PROTEINS "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
 
 run_task graph_NCI1_degree_mixed \
   "${PYTHON_BIN}" main_graph.py --dataset NCI1 "${COMMON_ARGS[@]}" --pooling sum --seeds "${SEED_ARGS[@]}"
@@ -88,5 +106,5 @@ if [ "${RUN_PPI}" = "1" ]; then
     "${PYTHON_BIN}" main_inductive.py --dataset ppi "${COMMON_ARGS[@]}" --seeds "${SEED_ARGS[@]}"
 fi
 
-echo "Degree mixed medium run finished: $(date)" >> "${SUMMARY_FILE}"
+echo "Degree mixed small/medium run finished: $(date)" >> "${SUMMARY_FILE}"
 echo "Summary: ${SUMMARY_FILE}"
