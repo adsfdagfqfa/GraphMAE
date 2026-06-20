@@ -1,0 +1,30 @@
+START node_ppi: Sat 20 Jun 2026 02:16:26 PM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_inductive.py --dataset ppi --device 0 --use_cfg --seeds 0 1 2 3 4
+2026-06-20 14:16:30,020 - INFO - Using best configs
+Namespace(activation='prelu', alpha_l=3, attn_drop=0.1, batch_size=32, concat_hidden=False, dataset='ppi', decoder='gat', deg4feat=False, device=0, drop_edge_rate=0.0, encoder='gat', in_drop=0.2, linear_prob=True, load_model=False, logging=False, loss_fn='sce', lr=0.0001, lr_f=0.005, mask_rate=0.5, max_epoch=1000, max_epoch_f=2000, negative_slope=0.2, norm='layernorm', num_heads=4, num_hidden=1024, num_layers=3, num_out_heads=1, optimizer='adam', pooling='mean', replace_rate=0.1, residual=True, save_model=False, scheduler=True, seeds=[0, 1, 2, 3, 4], use_cfg=True, warmup_steps=-1, weight_decay=0.0, weight_decay_f=0.0)
+Downloading /root/.dgl/ppi.zip from https://data.dgl.ai/dataset/ppi.zip...
+Extracting file to /root/.dgl/ppi
+Traceback (most recent call last):
+  File "main_inductive.py", line 295, in <module>
+    main(args)
+  File "main_inductive.py", line 214, in main
+    ) = load_inductive_dataset(dataset_name)
+  File "/root/GraphMAE/graphmae/datasets/data_util.py", line 92, in load_inductive_dataset
+    train_dataset = PPIDataset(mode='train')
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/data/ppi.py", line 73, in __init__
+    super(PPIDataset, self).__init__(name='ppi',
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/data/dgl_dataset.py", line 304, in __init__
+    super(DGLBuiltinDataset, self).__init__(name,
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/data/dgl_dataset.py", line 99, in __init__
+    self._load()
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/data/dgl_dataset.py", line 191, in _load
+    self.process()
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/data/ppi.py", line 86, in process
+    g_data = json.load(open(graph_file))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.dgl/ppi/train_graph.json'
+Command exited with non-zero status 1
+real 6.24
+user 4.02
+sys 2.95
+END node_ppi: Sat 20 Jun 2026 02:16:33 PM CST
+STATUS 1

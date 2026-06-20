@@ -1,0 +1,43 @@
+Remaining 3090 run started: Sat 20 Jun 2026 01:45:21 PM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Logs: /root/GraphMAE/logs/remaining_3090_20260620_134521
+
+OK   node_pubmed  /root/GraphMAE/logs/remaining_3090_20260620_134521/node_pubmed.log
+# final_acc: 0.8100±0.0048
+# early-stopping_acc: 0.8074±0.0053
+real 946.58
+user 935.00
+sys 9.11
+
+FAIL node_ogbn_arxiv  /root/GraphMAE/logs/remaining_3090_20260620_134521/node_ogbn_arxiv.log
+real 918.69
+user 1857.37
+sys 32.25
+
+FAIL node_ppi  /root/GraphMAE/logs/remaining_3090_20260620_134521/node_ppi.log
+real 6.24
+user 4.02
+sys 2.95
+
+FAIL node_reddit  /root/GraphMAE/logs/remaining_3090_20260620_134521/node_reddit.log
+real 34.77
+user 16.58
+sys 5.17
+
+FAIL graph_COLLAB  /root/GraphMAE/logs/remaining_3090_20260620_134521/graph_COLLAB.log
+real 0.97
+user 0.87
+sys 0.88
+
+FAIL graph_REDDIT_BINARY  /root/GraphMAE/logs/remaining_3090_20260620_134521/graph_REDDIT_BINARY.log
+real 3.15
+user 3.07
+sys 2.63
+
+FAIL graph_NCI1  /root/GraphMAE/logs/remaining_3090_20260620_134521/graph_NCI1.log
+real 0.94
+user 0.90
+sys 0.87
+
+Remaining 3090 run finished: Sat 20 Jun 2026 02:17:12 PM CST

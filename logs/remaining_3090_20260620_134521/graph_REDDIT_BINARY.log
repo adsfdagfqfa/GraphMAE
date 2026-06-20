@@ -1,0 +1,42 @@
+START graph_REDDIT_BINARY: Sat 20 Jun 2026 02:17:08 PM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset REDDIT-BINARY --device 0 --use_cfg --seeds 0 1 2 3 4
+Traceback (most recent call last):
+  File "main_graph.py", line 12, in <module>
+    from sklearn.model_selection import StratifiedKFold, GridSearchCV
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/__init__.py", line 83, in <module>
+    from .base import clone
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/base.py", line 19, in <module>
+    from .utils import _IS_32BIT
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/utils/__init__.py", line 22, in <module>
+    from ._param_validation import Interval, validate_params
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 15, in <module>
+    from .validation import _is_arraylike_not_scalar
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/utils/validation.py", line 25, in <module>
+    from ..utils._array_api import _asarray_with_order, _is_numpy_namespace, get_namespace
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/utils/_array_api.py", line 9, in <module>
+    from .fixes import parse_version
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/sklearn/utils/fixes.py", line 19, in <module>
+    import scipy.stats
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/stats/__init__.py", line 485, in <module>
+    from ._stats_py import *
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/stats/_stats_py.py", line 46, in <module>
+    from . import distributions
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/stats/distributions.py", line 11, in <module>
+    from . import _discrete_distns
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/stats/_discrete_distns.py", line 11, in <module>
+    from scipy.interpolate import interp1d
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/interpolate/__init__.py", line 167, in <module>
+    from ._interpolate import *
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/interpolate/_interpolate.py", line 12, in <module>
+    from . import _fitpack_py
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/interpolate/_fitpack_py.py", line 10, in <module>
+    from ._bsplines import BSpline
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/scipy/interpolate/_bsplines.py", line 9, in <module>
+    from . import _bspl
+KeyboardInterrupt
+Command terminated by signal 2
+real 3.15
+user 3.07
+sys 2.63
+END graph_REDDIT_BINARY: Sat 20 Jun 2026 02:17:12 PM CST
+STATUS 130

@@ -1,0 +1,30 @@
+START graph_COLLAB: Sat 20 Jun 2026 02:17:07 PM CST
+COMMAND: /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset COLLAB --device 0 --use_cfg --seeds 0 1 2 3 4
+Traceback (most recent call last):
+  File "main_graph.py", line 5, in <module>
+    import dgl
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/__init__.py", line 16, in <module>
+    from .backend import load_backend, backend_name
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/backend/__init__.py", line 109, in <module>
+    load_backend(get_preferred_backend())
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/dgl/backend/__init__.py", line 32, in load_backend
+    import torch
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/__init__.py", line 933, in <module>
+    from ._tensor import Tensor
+  File "/root/miniconda3/envs/graphmae/lib/python3.8/site-packages/torch/_tensor.py", line 12, in <module>
+    import torch.utils.hooks as hooks
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 657, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 562, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 541, in _init_module_attrs
+  File "<frozen importlib._bootstrap>", line 382, in cached
+  File "<frozen importlib._bootstrap_external>", line 487, in _get_cached
+  File "<frozen importlib._bootstrap_external>", line 391, in cache_from_source
+KeyboardInterrupt
+Command terminated by signal 2
+real 0.97
+user 0.87
+sys 0.88
+END graph_COLLAB: Sat 20 Jun 2026 02:17:08 PM CST
+STATUS 130
