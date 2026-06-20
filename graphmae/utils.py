@@ -71,6 +71,11 @@ def build_args():
                         help="the negative slope of leaky relu for GAT")
     parser.add_argument("--activation", type=str, default="prelu")
     parser.add_argument("--mask_rate", type=float, default=0.5)
+    parser.add_argument("--mask_strategy", type=str, default="random", choices=["random", "degree_mixed"])
+    parser.add_argument("--degree_mask_ratio", type=float, default=0.3,
+                        help="fraction of masked nodes sampled by degree when mask_strategy=degree_mixed")
+    parser.add_argument("--degree_mask_power", type=float, default=1.0,
+                        help="power applied to node degrees for degree-aware mask sampling")
     parser.add_argument("--drop_edge_rate", type=float, default=0.0)
     parser.add_argument("--replace_rate", type=float, default=0.0)
 

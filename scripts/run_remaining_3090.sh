@@ -6,6 +6,7 @@ PYTHON_BIN="${PYTHON_BIN:-python}"
 DEVICE="${1:-0}"
 LOG_DIR="${LOG_DIR:-${ROOT_DIR}/logs/remaining_3090_$(date +%Y%m%d_%H%M%S)}"
 SUMMARY_FILE="${LOG_DIR}/summary.log"
+TIME_BIN="$(command -v time || true)"
 
 mkdir -p "${LOG_DIR}"
 cd "${ROOT_DIR}" || exit 1
@@ -19,7 +20,11 @@ run_task() {
   {
     echo "START ${name}: $(date)"
     echo "COMMAND: $*"
-    /usr/bin/time -p "$@"
+    if [ -n "${TIME_BIN}" ]; then
+      "${TIME_BIN}" -p "$@"
+    else
+      "$@"
+    fi
     status=$?
     echo "END ${name}: $(date)"
     echo "STATUS ${status}"
