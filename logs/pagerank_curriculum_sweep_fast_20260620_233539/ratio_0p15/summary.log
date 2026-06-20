@@ -1,0 +1,45 @@
+PageRank curriculum fast run started: Sun 21 Jun 2026 12:17:08 AM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Small seeds: 0 1 2 3 4 5
+Medium seeds: 0 1 2
+PageRank mask ratio: 0.15
+PageRank mask steps: 5
+PageRank iters: 20
+PageRank damping: 0.85
+Skipped: NCI1 COLLAB REDDIT-BINARY
+Logs: /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15
+
+OK   node_citeseer_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/node_citeseer_pagerank_curriculum.log
+# final_acc: 0.7312±0.0048
+# early-stopping_acc: 0.7322±0.0058
+real 73.92
+user 71.74
+sys 4.61
+
+OK   node_cora_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/node_cora_pagerank_curriculum.log
+# final_acc: 0.8425±0.0031
+# early-stopping_acc: 0.8242±0.0100
+real 300.18
+user 295.12
+sys 5.66
+
+OK   node_pubmed_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/node_pubmed_pagerank_curriculum.log
+# final_acc: 0.8133±0.0045
+# early-stopping_acc: 0.8037±0.0061
+real 148.99
+user 146.40
+sys 4.68
+
+OK   graph_MUTAG_pagerank_curriculum  /root/GraphMAE/logs/pagerank_curriculum_sweep_fast_20260620_233539/ratio_0p15/graph_MUTAG_pagerank_curriculum.log
+#Test_f1: 0.8509±0.0471
+#Test_f1: 0.8673±0.0584
+#Test_f1: 0.8620±0.0851
+#Test_f1: 0.8883±0.0597
+#Test_f1: 0.8883±0.0642
+#Test_f1: 0.8564±0.0667
+# final_acc: 0.8689±0.0146
+real 20.32
+user 86.58
+sys 3.58
+
