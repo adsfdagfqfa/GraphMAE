@@ -22,6 +22,7 @@ run_task() {
   local name="$1"
   shift
   local log_file="${LOG_DIR}/${name}.log"
+  local task_summary="${LOG_DIR}/${name}.summary"
   local status=0
 
   echo "RUN  ${name}"
@@ -42,13 +43,14 @@ run_task() {
   } > "${log_file}" 2>&1
 
   if [ "${status}" -eq 0 ]; then
-    echo "OK   ${name}  ${log_file}" >> "${SUMMARY_FILE}"
+    echo "OK   ${name}  ${log_file}" > "${task_summary}"
   else
-    echo "FAIL ${name}  ${log_file}" >> "${SUMMARY_FILE}"
+    echo "FAIL ${name}  ${log_file}" > "${task_summary}"
   fi
 
-  grep -E "# final_|# early-stopping_|#Test_|real |user |sys " "${log_file}" >> "${SUMMARY_FILE}" || true
-  echo "" >> "${SUMMARY_FILE}"
+  grep -E "# final_|# early-stopping_|#Test_|real |user |sys " "${log_file}" >> "${task_summary}" || true
+  echo "" >> "${task_summary}"
+  return "${status}"
 }
 
 common_args() {
@@ -82,13 +84,32 @@ while IFS= read -r arg; do
 done < <(common_args)
 
 run_task graph_NCI1_pagerank_preserve_curriculum \
-  "${PYTHON_BIN}" main_graph.py --dataset NCI1 "${COMMON_ARGS[@]}" --seeds "${LARGE_SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset NCI1 "${COMMON_ARGS[@]}" --seeds "${LARGE_SEED_ARGS[@]}" &
+pid_nci1=$!
 
 run_task graph_COLLAB_pagerank_preserve_curriculum \
-  "${PYTHON_BIN}" main_graph.py --dataset COLLAB "${COMMON_ARGS[@]}" --seeds "${LARGE_SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset COLLAB "${COMMON_ARGS[@]}" --seeds "${LARGE_SEED_ARGS[@]}" &
+pid_collab=$!
 
 run_task graph_REDDIT_BINARY_pagerank_preserve_curriculum \
-  "${PYTHON_BIN}" main_graph.py --dataset REDDIT-BINARY "${COMMON_ARGS[@]}" --seeds "${LARGE_SEED_ARGS[@]}"
+  "${PYTHON_BIN}" main_graph.py --dataset REDDIT-BINARY "${COMMON_ARGS[@]}" --seeds "${LARGE_SEED_ARGS[@]}" &
+pid_reddit=$!
+
+status=0
+wait "${pid_nci1}" || status=1
+wait "${pid_collab}" || status=1
+wait "${pid_reddit}" || status=1
+
+for task_summary in \
+  "${LOG_DIR}/graph_NCI1_pagerank_preserve_curriculum.summary" \
+  "${LOG_DIR}/graph_COLLAB_pagerank_preserve_curriculum.summary" \
+  "${LOG_DIR}/graph_REDDIT_BINARY_pagerank_preserve_curriculum.summary"; do
+  if [ -f "${task_summary}" ]; then
+    cat "${task_summary}" >> "${SUMMARY_FILE}"
+  fi
+done
 
 echo "PageRank preserve curriculum large run finished: $(date)" >> "${SUMMARY_FILE}"
+echo "Overall status: ${status}" >> "${SUMMARY_FILE}"
 echo "Summary: ${SUMMARY_FILE}"
+exit "${status}"
