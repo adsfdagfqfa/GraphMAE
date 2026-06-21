@@ -1,0 +1,23 @@
+nohup: ignoring input
+RUN  node_citeseer_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset citeseer --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/node_citeseer_pagerank_preserve_curriculum.log
+RUN  node_cora_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset cora --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/node_cora_pagerank_preserve_curriculum.log
+RUN  node_pubmed_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_transductive.py --dataset pubmed --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/node_pubmed_pagerank_preserve_curriculum.log
+RUN  graph_MUTAG_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset MUTAG --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/graph_MUTAG_pagerank_preserve_curriculum.log
+RUN  graph_IMDB_BINARY_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset IMDB-BINARY --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/graph_IMDB_BINARY_pagerank_preserve_curriculum.log
+RUN  graph_IMDB_MULTI_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset IMDB-MULTI --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/graph_IMDB_MULTI_pagerank_preserve_curriculum.log
+RUN  graph_PROTEINS_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset PROTEINS --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --seeds 0 1 2 3 4 5
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/graph_PROTEINS_pagerank_preserve_curriculum.log
+Summary: /root/GraphMAE/logs/pagerank_preserve_curriculum_fast_20260621_033117/summary.log
