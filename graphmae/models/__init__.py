@@ -27,6 +27,7 @@ def build_model(args):
     pagerank_mask_steps = getattr(args, "pagerank_mask_steps", 5)
     pagerank_iters = getattr(args, "pagerank_iters", 20)
     pagerank_damping = getattr(args, "pagerank_damping", 0.85)
+    pagerank_preserve_power = getattr(args, "pagerank_preserve_power", 1.0)
     structmae_beta = getattr(args, "structmae_beta", 0.25)
     structmae_score = getattr(args, "structmae_score", "pagerank")
     structmae_iters = getattr(args, "structmae_iters", 20)
@@ -62,6 +63,7 @@ def build_model(args):
             pagerank_mask_steps=pagerank_mask_steps,
             pagerank_iters=pagerank_iters,
             pagerank_damping=pagerank_damping,
+            pagerank_preserve_power=pagerank_preserve_power,
         )
     elif mask_strategy == "structmae":
         model_cls = StructMAEMaskPreModel

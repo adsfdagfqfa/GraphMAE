@@ -12,6 +12,12 @@ class PageRankPreserveCurriculumMaskPreModel(PageRankCurriculumMaskPreModel):
     high-PageRank nodes visible as reconstruction context.
     """
 
+    def __init__(self, *args, pagerank_preserve_power=1.0, **kwargs):
+        super().__init__(*args, **kwargs)
+        if pagerank_preserve_power <= 0.0:
+            raise ValueError("pagerank_preserve_power must be positive.")
+        self._pagerank_preserve_power = pagerank_preserve_power
+
     def _pagerank_preserve_weights(self, g, x):
         scores = self._pagerank_scores(g, x).clone()
         if scores.numel() == 0:
@@ -23,7 +29,8 @@ class PageRankPreserveCurriculumMaskPreModel(PageRankCurriculumMaskPreModel):
             return torch.ones_like(scores)
 
         normalized = (scores - score_min) / (score_max - score_min)
-        return (1.0 - normalized).clamp_min(self._pagerank_eps)
+        weights = (1.0 - normalized).clamp_min(self._pagerank_eps)
+        return weights.pow(self._pagerank_preserve_power)
 
     def _sample_pagerank_curriculum_mask_nodes(self, g, x, num_mask_nodes):
         num_nodes = g.num_nodes()

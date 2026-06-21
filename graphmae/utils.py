@@ -84,6 +84,8 @@ def build_args():
                         help="number of PageRank power iterations for PageRank curriculum masking")
     parser.add_argument("--pagerank_damping", type=float, default=0.85,
                         help="PageRank damping factor for PageRank curriculum masking")
+    parser.add_argument("--pagerank_preserve_power", type=float, default=1.0,
+                        help="power applied to inverse-normalized PageRank weights when mask_strategy=pagerank_preserve_curriculum")
     parser.add_argument("--structmae_beta", type=float, default=0.25,
                         help="extra masking score added to scheduled important nodes when mask_strategy=structmae")
     parser.add_argument("--structmae_score", type=str, default="pagerank", choices=["pagerank", "degree"],

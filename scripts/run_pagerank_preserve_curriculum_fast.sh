@@ -8,6 +8,7 @@ PAGERANK_MASK_RATIO="${PAGERANK_MASK_RATIO:-0.20}"
 PAGERANK_MASK_STEPS="${PAGERANK_MASK_STEPS:-5}"
 PAGERANK_ITERS="${PAGERANK_ITERS:-20}"
 PAGERANK_DAMPING="${PAGERANK_DAMPING:-0.85}"
+PAGERANK_PRESERVE_POWER="${PAGERANK_PRESERVE_POWER:-1.0}"
 LOG_DIR="${LOG_DIR:-${ROOT_DIR}/logs/pagerank_preserve_curriculum_fast_$(date +%Y%m%d_%H%M%S)}"
 SUMMARY_FILE="${LOG_DIR}/summary.log"
 TIME_BIN="$(command -v time || true)"
@@ -60,7 +61,8 @@ common_args() {
     --pagerank_mask_ratio "${PAGERANK_MASK_RATIO}" \
     --pagerank_mask_steps "${PAGERANK_MASK_STEPS}" \
     --pagerank_iters "${PAGERANK_ITERS}" \
-    --pagerank_damping "${PAGERANK_DAMPING}"
+    --pagerank_damping "${PAGERANK_DAMPING}" \
+    --pagerank_preserve_power "${PAGERANK_PRESERVE_POWER}"
 }
 
 echo "PageRank preserve curriculum fast run started: $(date)" > "${SUMMARY_FILE}"
@@ -70,6 +72,7 @@ echo "Small seeds: ${SMALL_SEED_ARGS[*]}" >> "${SUMMARY_FILE}"
 echo "Medium seeds: ${MEDIUM_SEED_ARGS[*]}" >> "${SUMMARY_FILE}"
 echo "PageRank preserve mask ratio: ${PAGERANK_MASK_RATIO}" >> "${SUMMARY_FILE}"
 echo "PageRank preserve mask steps: ${PAGERANK_MASK_STEPS}" >> "${SUMMARY_FILE}"
+echo "PageRank preserve power: ${PAGERANK_PRESERVE_POWER}" >> "${SUMMARY_FILE}"
 echo "PageRank iters: ${PAGERANK_ITERS}" >> "${SUMMARY_FILE}"
 echo "PageRank damping: ${PAGERANK_DAMPING}" >> "${SUMMARY_FILE}"
 echo "Skipped: NCI1 COLLAB REDDIT-BINARY" >> "${SUMMARY_FILE}"
