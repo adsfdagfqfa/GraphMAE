@@ -1,0 +1,143 @@
+PageRank preserve curriculum fast sweep started: Sun 21 Jun 2026 11:46:28 AM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Ratios: 0.15
+Powers: 0.5 1.0
+Steps: 5
+Iters: 20
+Damping: 0.85
+Logs: logs/preserve_sweep_r015_p05_p10
+
+RUN ratio=0.15 power=0.5
+LOG logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5
+STATUS ratio=0.15 power=0.5: 0
+OK   node_citeseer_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/node_citeseer_pagerank_preserve_curriculum.log
+# final_acc: 0.7340±0.0012
+# early-stopping_acc: 0.7320±0.0068
+real 96.97
+user 95.11
+sys 4.67
+OK   node_cora_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/node_cora_pagerank_preserve_curriculum.log
+# final_acc: 0.8413±0.0052
+# early-stopping_acc: 0.8330±0.0092
+real 388.64
+user 383.30
+sys 5.63
+OK   node_pubmed_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/node_pubmed_pagerank_preserve_curriculum.log
+# final_acc: 0.8130±0.0050
+# early-stopping_acc: 0.8050±0.0051
+real 350.12
+user 348.31
+sys 4.30
+OK   graph_MUTAG_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/graph_MUTAG_pagerank_preserve_curriculum.log
+#Test_f1: 0.8190±0.0542
+#Test_f1: 0.8515±0.0382
+#Test_f1: 0.8778±0.0576
+#Test_f1: 0.8830±0.0457
+#Test_f1: 0.8778±0.0665
+#Test_f1: 0.8406±0.0662
+# final_acc: 0.8583±0.0234
+real 30.69
+user 112.25
+sys 3.30
+OK   graph_IMDB_BINARY_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/graph_IMDB_BINARY_pagerank_preserve_curriculum.log
+#Test_f1: 0.7540±0.0262
+#Test_f1: 0.7550±0.0211
+#Test_f1: 0.7460±0.0335
+#Test_f1: 0.7530±0.0283
+#Test_f1: 0.7500±0.0283
+#Test_f1: 0.7440±0.0320
+# final_acc: 0.7503±0.0041
+real 468.10
+user 1957.83
+sys 6.31
+OK   graph_IMDB_MULTI_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/graph_IMDB_MULTI_pagerank_preserve_curriculum.log
+#Test_f1: 0.5120±0.0263
+#Test_f1: 0.5287±0.0251
+#Test_f1: 0.5207±0.0274
+#Test_f1: 0.5147±0.0145
+#Test_f1: 0.5153±0.0229
+#Test_f1: 0.5193±0.0224
+# final_acc: 0.5184±0.0054
+real 897.63
+user 3054.93
+sys 6.25
+OK   graph_PROTEINS_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_0p5/graph_PROTEINS_pagerank_preserve_curriculum.log
+#Test_f1: 0.7565±0.0400
+#Test_f1: 0.7538±0.0577
+#Test_f1: 0.7511±0.0410
+#Test_f1: 0.7439±0.0457
+#Test_f1: 0.7475±0.0400
+#Test_f1: 0.7484±0.0430
+# final_acc: 0.7502±0.0042
+real 944.82
+user 4404.43
+sys 9.35
+
+RUN ratio=0.15 power=1.0
+LOG logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0
+STATUS ratio=0.15 power=1.0: 0
+OK   node_citeseer_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/node_citeseer_pagerank_preserve_curriculum.log
+# final_acc: 0.7338±0.0021
+# early-stopping_acc: 0.7310±0.0059
+real 80.82
+user 79.39
+sys 3.70
+OK   node_cora_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/node_cora_pagerank_preserve_curriculum.log
+# final_acc: 0.8423±0.0050
+# early-stopping_acc: 0.8300±0.0114
+real 392.72
+user 387.75
+sys 5.18
+OK   node_pubmed_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/node_pubmed_pagerank_preserve_curriculum.log
+# final_acc: 0.8130±0.0054
+# early-stopping_acc: 0.8083±0.0012
+real 280.67
+user 279.61
+sys 4.03
+OK   graph_MUTAG_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/graph_MUTAG_pagerank_preserve_curriculum.log
+#Test_f1: 0.8240±0.0434
+#Test_f1: 0.8462±0.0486
+#Test_f1: 0.8778±0.0576
+#Test_f1: 0.8725±0.0628
+#Test_f1: 0.8988±0.0439
+#Test_f1: 0.8567±0.0702
+# final_acc: 0.8627±0.0239
+real 32.64
+user 113.08
+sys 3.49
+OK   graph_IMDB_BINARY_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/graph_IMDB_BINARY_pagerank_preserve_curriculum.log
+#Test_f1: 0.7550±0.0353
+#Test_f1: 0.7520±0.0227
+#Test_f1: 0.7480±0.0337
+#Test_f1: 0.7600±0.0268
+#Test_f1: 0.7580±0.0286
+#Test_f1: 0.7410±0.0305
+# final_acc: 0.7523±0.0064
+real 507.69
+user 2173.08
+sys 7.40
+OK   graph_IMDB_MULTI_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/graph_IMDB_MULTI_pagerank_preserve_curriculum.log
+#Test_f1: 0.5173±0.0196
+#Test_f1: 0.5140±0.0237
+#Test_f1: 0.5187±0.0212
+#Test_f1: 0.5147±0.0190
+#Test_f1: 0.5260±0.0257
+#Test_f1: 0.5200±0.0265
+# final_acc: 0.5184±0.0040
+real 909.46
+user 3171.37
+sys 6.53
+OK   graph_PROTEINS_pagerank_preserve_curriculum  logs/preserve_sweep_r015_p05_p10/ratio_0p15_power_1p0/graph_PROTEINS_pagerank_preserve_curriculum.log
+#Test_f1: 0.7547±0.0423
+#Test_f1: 0.7520±0.0534
+#Test_f1: 0.7502±0.0512
+#Test_f1: 0.7376±0.0577
+#Test_f1: 0.7592±0.0435
+#Test_f1: 0.7484±0.0401
+# final_acc: 0.7504±0.0067
+real 980.86
+user 4415.43
+sys 8.51
+
+PageRank preserve curriculum fast sweep finished: Sun 21 Jun 2026 01:32:30 PM CST

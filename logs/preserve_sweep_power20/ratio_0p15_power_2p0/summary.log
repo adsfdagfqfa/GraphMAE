@@ -1,0 +1,83 @@
+PageRank preserve curriculum fast run started: Sun 21 Jun 2026 11:46:43 AM CST
+Device: 0
+Python: /root/miniconda3/envs/graphmae/bin/python
+Small seeds: 0 1 2 3 4 5
+Medium seeds: 0 1 2
+PageRank preserve mask ratio: 0.15
+PageRank preserve mask steps: 5
+PageRank preserve power: 2.0
+PageRank iters: 20
+PageRank damping: 0.85
+Skipped: NCI1 COLLAB REDDIT-BINARY
+Logs: logs/preserve_sweep_power20/ratio_0p15_power_2p0
+
+OK   node_citeseer_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/node_citeseer_pagerank_preserve_curriculum.log
+# final_acc: 0.7315±0.0021
+# early-stopping_acc: 0.7335±0.0028
+real 100.91
+user 99.36
+sys 4.40
+
+OK   node_cora_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/node_cora_pagerank_preserve_curriculum.log
+# final_acc: 0.8415±0.0043
+# early-stopping_acc: 0.8318±0.0114
+real 396.15
+user 391.03
+sys 5.37
+
+OK   node_pubmed_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/node_pubmed_pagerank_preserve_curriculum.log
+# final_acc: 0.8137±0.0076
+# early-stopping_acc: 0.8037±0.0074
+real 361.13
+user 359.19
+sys 4.32
+
+OK   graph_MUTAG_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/graph_MUTAG_pagerank_preserve_curriculum.log
+#Test_f1: 0.8506±0.0594
+#Test_f1: 0.8462±0.0425
+#Test_f1: 0.8725±0.0749
+#Test_f1: 0.8936±0.0527
+#Test_f1: 0.8936±0.0527
+#Test_f1: 0.8620±0.0709
+# final_acc: 0.8697±0.0188
+real 27.99
+user 95.35
+sys 3.25
+
+OK   graph_IMDB_BINARY_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/graph_IMDB_BINARY_pagerank_preserve_curriculum.log
+#Test_f1: 0.7490±0.0270
+#Test_f1: 0.7500±0.0253
+#Test_f1: 0.7430±0.0269
+#Test_f1: 0.7520±0.0289
+#Test_f1: 0.7570±0.0272
+#Test_f1: 0.7520±0.0296
+# final_acc: 0.7505±0.0042
+real 468.79
+user 1980.77
+sys 5.79
+
+OK   graph_IMDB_MULTI_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/graph_IMDB_MULTI_pagerank_preserve_curriculum.log
+#Test_f1: 0.5153±0.0217
+#Test_f1: 0.5147±0.0268
+#Test_f1: 0.5233±0.0292
+#Test_f1: 0.5100±0.0222
+#Test_f1: 0.5200±0.0265
+#Test_f1: 0.5180±0.0288
+# final_acc: 0.5169±0.0042
+real 912.33
+user 3176.47
+sys 7.08
+
+OK   graph_PROTEINS_pagerank_preserve_curriculum  logs/preserve_sweep_power20/ratio_0p15_power_2p0/graph_PROTEINS_pagerank_preserve_curriculum.log
+#Test_f1: 0.7528±0.0482
+#Test_f1: 0.7610±0.0387
+#Test_f1: 0.7475±0.0505
+#Test_f1: 0.7520±0.0467
+#Test_f1: 0.7583±0.0538
+#Test_f1: 0.7583±0.0451
+# final_acc: 0.7550±0.0046
+real 923.08
+user 4186.31
+sys 8.27
+
+PageRank preserve curriculum fast run finished: Sun 21 Jun 2026 12:39:54 PM CST
