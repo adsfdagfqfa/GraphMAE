@@ -1,0 +1,11 @@
+nohup: ignoring input
+RUN  graph_NCI1_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset NCI1 --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --pagerank_preserve_power 0.5 --seeds 0 1 2
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/graph_NCI1_pagerank_preserve_curriculum.log
+RUN  graph_COLLAB_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset COLLAB --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --pagerank_preserve_power 0.5 --seeds 0 1 2
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/graph_COLLAB_pagerank_preserve_curriculum.log
+RUN  graph_REDDIT_BINARY_pagerank_preserve_curriculum
+CMD  /root/miniconda3/envs/graphmae/bin/python main_graph.py --dataset REDDIT-BINARY --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --pagerank_preserve_power 0.5 --seeds 0 1 2
+LOG  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/graph_REDDIT_BINARY_pagerank_preserve_curriculum.log
+Summary: /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/summary.log

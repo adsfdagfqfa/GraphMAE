@@ -1,0 +1,9 @@
+OK   graph_COLLAB_pagerank_preserve_curriculum  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/graph_COLLAB_pagerank_preserve_curriculum.log
+#Test_f1: 0.8038±0.0135
+#Test_f1: 0.8084±0.0135
+#Test_f1: 0.8064±0.0113
+# final_acc: 0.8062±0.0019
+real 1728.34
+user 3472.93
+sys 89.72
+

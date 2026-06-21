@@ -1,0 +1,9 @@
+OK   graph_REDDIT_BINARY_pagerank_preserve_curriculum  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/graph_REDDIT_BINARY_pagerank_preserve_curriculum.log
+#Test_f1: 0.8800±0.0213
+#Test_f1: 0.8755±0.0231
+#Test_f1: 0.8815±0.0201
+# final_acc: 0.8790±0.0025
+real 2408.30
+user 12346.06
+sys 236.59
+

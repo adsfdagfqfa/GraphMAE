@@ -1,0 +1,12 @@
+START graph_NCI1_pagerank_preserve_curriculum: Sun 21 Jun 2026 02:17:53 PM CST
+COMMAND: /root/miniconda3/bin/python main_graph.py --dataset NCI1 --device 0 --use_cfg --mask_strategy pagerank_preserve_curriculum --pagerank_mask_ratio 0.20 --pagerank_mask_steps 5 --pagerank_iters 20 --pagerank_damping 0.85 --pagerank_preserve_power 0.5 --seeds 0 1 2
+Traceback (most recent call last):
+  File "main_graph.py", line 5, in <module>
+    import dgl
+ModuleNotFoundError: No module named 'dgl'
+Command exited with non-zero status 1
+real 0.12
+user 0.28
+sys 0.84
+END graph_NCI1_pagerank_preserve_curriculum: Sun 21 Jun 2026 02:17:53 PM CST
+STATUS 1

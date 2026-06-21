@@ -1,0 +1,28 @@
+PageRank preserve curriculum large run started: Sun 21 Jun 2026 02:17:53 PM CST
+Device: 0
+Python: /root/miniconda3/bin/python
+Large seeds: 0 1 2
+PageRank preserve mask ratio: 0.20
+PageRank preserve mask steps: 5
+PageRank preserve power: 0.5
+PageRank iters: 20
+PageRank damping: 0.85
+Datasets: NCI1 COLLAB REDDIT-BINARY
+Logs: /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_141753
+
+FAIL graph_NCI1_pagerank_preserve_curriculum  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_141753/graph_NCI1_pagerank_preserve_curriculum.log
+real 0.12
+user 0.28
+sys 0.84
+
+FAIL graph_COLLAB_pagerank_preserve_curriculum  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_141753/graph_COLLAB_pagerank_preserve_curriculum.log
+real 0.12
+user 0.28
+sys 0.82
+
+FAIL graph_REDDIT_BINARY_pagerank_preserve_curriculum  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_141753/graph_REDDIT_BINARY_pagerank_preserve_curriculum.log
+real 0.17
+user 0.47
+sys 1.18
+
+PageRank preserve curriculum large run finished: Sun 21 Jun 2026 02:17:53 PM CST
