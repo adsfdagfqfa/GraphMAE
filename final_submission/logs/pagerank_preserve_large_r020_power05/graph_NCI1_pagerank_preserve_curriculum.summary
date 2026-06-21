@@ -1,0 +1,9 @@
+OK   graph_NCI1_pagerank_preserve_curriculum  /root/GraphMAE/logs/pagerank_preserve_curriculum_large_20260621_142011/graph_NCI1_pagerank_preserve_curriculum.log
+#Test_f1: 0.6873±0.0225
+#Test_f1: 0.6903±0.0156
+#Test_f1: 0.6776±0.0265
+# final_acc: 0.6851±0.0054
+real 6315.70
+user 38304.37
+sys 74.52
+
